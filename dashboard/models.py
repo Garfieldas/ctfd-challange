@@ -12,7 +12,7 @@ class TaxDeclaration(models.Model):
     amount_paid = models.DecimalField(max_digits=12, decimal_places=2, default=0)
 
     def __str__(self):
-        return self.user
+        return str(self.id)
     
     class Meta:
         verbose_name = "Mokėsčiai"
