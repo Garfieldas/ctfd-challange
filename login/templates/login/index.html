@@ -1,0 +1,43 @@
+{% include 'base.html' %}
+{% block content %}
+<style>
+    body {font-family: "Lato", sans-serif;}
+    .login-box {
+      max-width: 400px;
+      margin: auto;
+      margin-top: 100px;
+    }
+    .w3-button {
+      width: 100%;
+    }
+    footer {
+        display: none;
+    }
+  </style>
+
+
+<div class="w3-container login-box w3-card-4 w3-padding-large w3-light-grey">
+    <h2 class="w3-center">Prisijungti</h2>
+  
+    {% if form.errors %}
+      <div class="w3-panel w3-red">
+        <p>Neteisingas vartotojo vardas arba slaptažodis.</p>
+      </div>
+    {% endif %}
+  
+    <form method="post">
+      {% csrf_token %}
+      <label for="username"><b>Vartotojo vardas</b></label>
+      <input class="w3-input w3-margin-bottom" type="text" name="username" required id="username">
+  
+      <label for="password"><b>Slaptažodis</b></label>
+      <input class="w3-input w3-margin-bottom" type="password" name="password" required id="password">
+  
+      <button type="submit" class="w3-button w3-green">Prisijungti</button>
+    </form>
+  
+    <div class="w3-center w3-margin-top">
+      <p>Neturite paskyros? <a href="#">Registruotis</a></p>
+    </div>
+  </div>
+{% endblock %}
