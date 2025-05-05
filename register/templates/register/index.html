@@ -17,7 +17,7 @@
 
 
 <div class="w3-container login-box w3-card-4 w3-padding-large w3-light-grey">
-    <h2 class="w3-center">Prisijungti</h2>
+    <h2 class="w3-center">Registruotis</h2>
   
     <form method="post">
       {% csrf_token %}
@@ -26,12 +26,15 @@
   
       <label for="password"><b>Slaptažodis</b></label>
       <input class="w3-input w3-margin-bottom" type="password" name="password" required id="password">
+
+      <label for="password"><b>Slaptažodis</b></label>
+      <input class="w3-input w3-margin-bottom" type="password" name="password" required id="password">
   
-      <button type="submit" class="w3-button w3-green">Prisijungti</button>
+      <button type="submit" class="w3-button w3-green">Registruotis</button>
     </form>
   
     <div class="w3-center w3-margin-top">
-      <p>Neturite paskyros? <a href="{% url 'register' %}">Registruotis</a></p>
+      <p>Ar jau turite paskyrą? <a href="{% url 'login' %}">Prisijungti</a></p>
     </div>
   </div>
 {% endblock %}
