@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +49,16 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'flag.apps.FlagConfig',
 ]
+
+JAZZMIN_SETTINGS = {
+    "site_title": "VMI",
+    "site_header": "VMI",
+    "site_brand": "VMI",
+    "site_logo": "img/admin-logo.jpg",
+    "topmenu_links": [
+        {"name": "Peržiurėti puslapį", "url": "/", "new_window": True},
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
