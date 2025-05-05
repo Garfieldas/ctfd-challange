@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'dashboard.apps.DashboardConfig',
     'login.apps.LoginConfig',
-    'register.apps.RegisterConfig'
+    'register.apps.RegisterConfig',
+    'about.apps.AboutConfig',
 ]
 
 MIDDLEWARE = [
