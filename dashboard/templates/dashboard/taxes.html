@@ -1,12 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% for declaration in declaration %}
-
 <!-- Header -->
 <header class="w3-container w3-green w3-center" style="padding:128px 16px">
-    <h1 class="w3-margin w3-jumbo">{{ declaration.user }}</h1>
-  </header>
+  <h1 class="w3-margin w3-jumbo">{{ user.username }}</h1>
+</header>
+
+{% if not declaration%}
+    <!-- Table Content -->
+    <div class="w3-container w3-padding-32">
+      <div class="dashboard-table">
+        <table class="w3-table-all w3-hoverable w3-card-4">
+          <thead>
+            <tr class="w3-green">
+              <th>Unikalus Kodas</th>
+              <th>Tipas</th>
+              <th>Pateikta</th>
+              <th>Deklaruota suma (€)</th>
+              <th>Sumokėta suma (€)</th>
+              <th>Statusas</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <span class="w3-tag w3-red">Neturite deklaracijų</span>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+{% endif %}
+
+{% for declaration in declaration %}
 
     <!-- Table Content -->
 <div class="w3-container w3-padding-32">

@@ -27,11 +27,21 @@
       <label for="password"><b>Slaptažodis</b></label>
       <input class="w3-input w3-margin-bottom" type="password" name="password" required id="password">
 
-      <label for="password"><b>Slaptažodis</b></label>
-      <input class="w3-input w3-margin-bottom" type="password" name="password" required id="password">
+      <label for="password"><b>Pakartoti slaptažodį</b></label>
+      <input class="w3-input w3-margin-bottom" type="password" name="confirm-password" required id="confirm-password">
   
       <button type="submit" class="w3-button w3-green">Registruotis</button>
     </form>
+
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+          {{ message }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
   
     <div class="w3-center w3-margin-top">
       <p>Ar jau turite paskyrą? <a href="{% url 'login' %}">Prisijungti</a></p>
